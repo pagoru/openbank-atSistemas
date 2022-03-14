@@ -1,20 +1,20 @@
 import { combineReducers } from 'redux';
 import { all } from "@redux-saga/core/effects";
-import {clientReducer, clientSaga, ClientState} from "./example";
+import {exampleReducer, exampleSaga, ExampleState} from "./example";
 
 /** Default State **/
 export interface DefaultState {
-    example: ClientState;
+    example: ExampleState;
 }
 
 /** root Reducers **/
 export const rootReducer = combineReducers<DefaultState>({
-    example: clientReducer,
+    example: exampleReducer,
 });
 
 /** root Sagas **/
 export function* rootSaga() {
     yield all([
-        clientSaga(),
+        exampleSaga(),
     ]);
 }
