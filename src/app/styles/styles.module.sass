@@ -1,0 +1,4 @@
+@use "sass:map"
+
+@function getColor($colorName)
+    @return map.get(('gray': #546a75, 'light-gray': #bac7cb, 'blue': #002b45, 'white': #fff), $colorName)

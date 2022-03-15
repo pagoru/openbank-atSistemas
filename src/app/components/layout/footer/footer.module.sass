@@ -1,0 +1,31 @@
+@import "../../../styles/styles.module"
+
+.footer
+    width: 100%
+    
+    .box
+        padding: 1.5em 2em
+
+    .santanderBox
+        @extend .box
+        background-color: getColor('blue')
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+        .santanderLogo
+            display: block
+            height: 1rem
+
+        a
+            text-decoration: none
+            cursor: pointer
+            color: getColor('light-gray')
+            font-weight: 600
+
+            &:hover
+                opacity: .8
+
+    .copyrightBox
+        @extend .box
+        color: getColor('gray')
