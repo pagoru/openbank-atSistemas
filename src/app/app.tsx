@@ -6,6 +6,9 @@ import {Header} from "./components/layout/header/header.component";
 import {Navigation} from "./components/navigation/navigation.component";
 import {Content} from "./components/layout/content/content.component";
 import {Footer} from "./components/layout/footer/footer.component";
+import {
+    BrowserRouter
+} from "react-router-dom";
 
 export const App: React.FunctionComponent = () => {
     const isTranslationLoaded = useTranslationHook();
@@ -15,11 +18,13 @@ export const App: React.FunctionComponent = () => {
 
     return (
         <Provider store={store}>
-            <Header/>
-            <Content>
-                <Navigation/>
-            </Content>
-            <Footer/>
+            <BrowserRouter>
+                <Header/>
+                <Content>
+                    <Navigation/>
+                </Content>
+                <Footer/>
+            </BrowserRouter>
         </Provider>
     );
 }

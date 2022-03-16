@@ -1,0 +1,25 @@
+@import "../../../styles/styles.module"
+
+.container
+    margin-top: -3em
+    background-color: getColor('white')
+
+    .padding
+        padding: 1.5em 5em
+
+    .header
+        @extend .padding
+        position: relative
+        background-color: getColor('iron')
+
+    .content
+        background-color: getColor('white')
+        box-shadow: 0 0.2rem 0.4rem 0 rgb(0 43 69 / 40%)
+
+        .children
+            @extend .padding
+
+        .footer
+            @extend .padding
+            border-top: 2px solid getColor('mercury')
+            background-color: getColor('white')

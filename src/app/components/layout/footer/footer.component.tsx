@@ -12,12 +12,14 @@ export const Footer: React.FunctionComponent = () => {
             <div className={styles.santanderBox}>
                 <div>
                     <img
+                        alt='logo'
                         className={styles.santanderLogo}
                         src={logoSantanderFooter}
                     />
                 </div>
                 <div>
                     <a
+                        rel="noreferrer"
                         href='https://github.com/pagoru'
                         target='_blank'
                     >
