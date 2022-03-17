@@ -7,3 +7,7 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 export const Primary = () => <Button>Button</Button>;
+export const PrimaryDisabled = () => <Button disabled>Button</Button>;
+
+export const Secondary = () => <Button secondary>Button</Button>;
+export const SecondaryDisabled = () => <Button secondary disabled>Button</Button>;

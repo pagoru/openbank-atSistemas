@@ -13,21 +13,35 @@ export const StepsContainer: React.FunctionComponent<PasswordManagerContainerPro
         footer
     }
 ) => {
-    
     return (
-        <div className={styles.container}>
-            <div className={styles.header}>
+        <div
+            data-testid='container'
+            className={styles.container}
+        >
+            <div
+                data-testid='header'
+                className={styles.header}
+            >
                 {
                     header
                 }
             </div>
-            <div className={styles.content}>
-                <div className={styles.children}>
+            <div
+                data-testid='content'
+                className={styles.content}
+            >
+                <div
+                    data-testid='children'
+                    className={styles.children}
+                >
                     {
                         children
                     }
                 </div>
-                <div className={styles.footer}>
+                <div
+                    data-testid='footer'
+                    className={styles.footer}
+                >
                     {
                         footer
                     }

@@ -8,10 +8,21 @@
     color: getColor('white')
     background-color: getColor('blue-whale')
 
-    &:hover:not(.disabled)
-        color: getColor('iron')
+    &:not(.secondary)
+        &:hover:not(.disabled)
+            background-color: getColor('cadet')
 
-    &.disabled
-        cursor: not-allowed
-        background-color: getColor('iron')
+        &.disabled
+            cursor: not-allowed
+            background-color: getColor('iron')
 
+    &.secondary
+        color: getColor('blue-whale')
+        background-color: transparent
+
+        &:hover:not(.disabled)
+            color: getColor('cadet')
+
+        &.disabled
+            cursor: not-allowed
+            color: getColor('mercury')
