@@ -1,0 +1,17 @@
+@import "../../../styles/styles.module"
+
+.button
+    cursor: pointer
+    border: 0
+    padding: 1em 2em
+    font-weight: 600
+    color: getColor('white')
+    background-color: getColor('blue-whale')
+
+    &:hover:not(.disabled)
+        color: getColor('iron')
+
+    &.disabled
+        cursor: not-allowed
+        background-color: getColor('iron')
+

@@ -2,12 +2,12 @@ import React from "react";
 import {Container} from "../../shared/container/container.component";
 import styles from './password-manager.module.sass';
 import {StepsContainer} from "../../shared/steps-container/steps-container.component";
-import {PasswordManagerStepsContainerHeader} from "./steps-container-header/header.component";
+import {PasswordManagerStepsContainerFooter} from "./steps-container/footer/footer.component";
+import {PasswordManagerStepsContainerHeader} from "./steps-container/header/header.component";
 
 export const PasswordManager: React.FunctionComponent = () => {
     
     const ch = () => <div>children</div>;
-    const fo = () => <div>footer</div>;
     
     return (
         <div className={styles.content}>
@@ -16,7 +16,7 @@ export const PasswordManager: React.FunctionComponent = () => {
                 <StepsContainer
                     header={<PasswordManagerStepsContainerHeader/>}
                     children={ch()}
-                    footer={fo()}
+                    footer={<PasswordManagerStepsContainerFooter/>}
                 />
             </Container>
         </div>
