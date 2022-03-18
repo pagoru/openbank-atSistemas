@@ -4,7 +4,7 @@ body {
     height: 100%;
     margin: 0;
     font-size: 14px;
-    font-family: MarkOT,Open Sans,Arial,sans-serif;
+    font-family: 'Quicksand', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: getColor('white-smoke');
@@ -24,7 +24,8 @@ $colorMap: (
     'cadet': #546a75,
     'blue-whale': #002b45,
     'vampire-grey': #505050,
-    'red-ribbon': #e8004c
+    'red-ribbon': #e8004c,
+    'dark-turquoise': #00c3dd
 );
 
 @function getColor($colorName) {

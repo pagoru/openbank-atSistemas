@@ -6,7 +6,10 @@ export const Container: React.FunctionComponent = (
         children
     }
 ) => (
-    <div className={styles.container}>
+    <div
+        data-testid='container'
+        className={styles.container}
+    >
         {
             children
         }

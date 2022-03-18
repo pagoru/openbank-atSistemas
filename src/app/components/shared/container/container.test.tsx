@@ -7,16 +7,16 @@ describe('Container', () => {
 
     it('to render', () => {
         render(<Container>test</Container>);
-        const button = screen.getByText("test");
+        const container = screen.getByTestId("container");
 
-        expect(button).toBeInTheDocument();
+        expect(container).toBeInTheDocument();
     });
 
     it('to have default class', () => {
         render(<Container>test</Container>);
-        const button = screen.getByText("test");
+        const container = screen.getByTestId("container");
 
-        expect(button).toHaveClass(styles.container);
+        expect(container).toHaveClass(styles.container);
     });
 
 })

@@ -7,9 +7,9 @@ describe('StepsContainerHeader', () => {
 
     it('render steps container header', () => {
         render(<StepsContainerHeader length={3} current={0}/>);
-        const button = screen.getByTestId("steps-container-header");
+        const header = screen.getByTestId("steps-container-header");
 
-        expect(button).toBeInTheDocument();
+        expect(header).toBeInTheDocument();
     });
 
     it('render 3 options and 2 lines', () => {

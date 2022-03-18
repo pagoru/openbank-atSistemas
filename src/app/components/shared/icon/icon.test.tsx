@@ -7,15 +7,15 @@ describe('Icon', () => {
 
     it('render right-chevron', () => {
         render(<Icon icon={IconEnum.RIGHT_CHEVRON}/>);
-        const button = screen.getByTestId("icon-right-chevron");
+        const icon = screen.getByTestId("icon-right-chevron");
 
-        expect(button).toBeInTheDocument();
+        expect(icon).toBeInTheDocument();
     });
     
     it('render check', () => {
         render(<Icon icon={IconEnum.CHECK}/>);
-        const button = screen.getByTestId("icon-check");
+        const icon = screen.getByTestId("icon-check");
         
-        expect(button).toBeInTheDocument();
+        expect(icon).toBeInTheDocument();
     });
 })
