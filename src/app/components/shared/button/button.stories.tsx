@@ -1,13 +1,35 @@
 import {ComponentMeta} from '@storybook/react';
-import {Button} from './button.component';
+import {Button, ButtonProps} from './button.component';
 
 export default {
     title: 'Shared/Button',
     component: Button,
 } as ComponentMeta<typeof Button>;
 
-export const Primary = () => <Button>Button</Button>;
-export const PrimaryDisabled = () => <Button disabled>Button</Button>;
+const Template = (args: ButtonProps): any => (
+    <Button {...args}/>
+);
 
-export const Secondary = () => <Button secondary>Button</Button>;
-export const SecondaryDisabled = () => <Button secondary disabled>Button</Button>;
+export const Primary: any = Template.bind({});
+Primary.args = {
+    children: 'Button'
+}
+
+export const PrimaryDisabled: any = Template.bind({});
+PrimaryDisabled.args = {
+    disabled: true,
+    children: 'Button'
+}
+
+export const Secondary: any = Template.bind({});
+Secondary.args = {
+    secondary: true,
+    children: 'Button'
+}
+
+export const SecondaryDisabled: any = Template.bind({});
+SecondaryDisabled.args = {
+    secondary: true,
+    disabled: true,
+    children: 'Button'
+}

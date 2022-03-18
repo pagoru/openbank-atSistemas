@@ -6,4 +6,13 @@ export default {
     component: Container,
 } as ComponentMeta<typeof Container>;
 
-export const Primary = () => <Container>content</Container>;
+const Template = (args: any): any => (
+    <Container {...args}/>
+);
+
+export const Primary: any = Template.bind({});
+Primary.args = {
+    children: (
+        <label>test</label>
+    )
+}

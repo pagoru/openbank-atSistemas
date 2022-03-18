@@ -32,7 +32,9 @@ export const StepsContainerHeader: React.FunctionComponent<StepsContainerHeaderP
             
             return (
                 <Fragment key={index}>
-                    <div className={classNameCircle}>
+                    <div
+                        data-testid='steps-container-header-option'
+                        className={classNameCircle}>
                         {
                             isDone ? (
                                 <Icon
@@ -45,7 +47,10 @@ export const StepsContainerHeader: React.FunctionComponent<StepsContainerHeaderP
                     </div>
                     {
                         index !== length - 1 && (
-                            <div className={classNameLine}/>
+                            <div
+                                data-testid='steps-container-header-line'
+                                className={classNameLine}
+                            />
                         )
                     }
                 </Fragment>

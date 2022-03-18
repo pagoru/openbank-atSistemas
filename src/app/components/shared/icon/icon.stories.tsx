@@ -1,5 +1,5 @@
 import {ComponentMeta} from '@storybook/react';
-import {Icon} from "./icon.component";
+import {Icon, IconProps} from "./icon.component";
 import {IconEnum} from "../../../enums/icon.enum";
 
 export default {
@@ -7,16 +7,18 @@ export default {
     component: Icon,
 } as ComponentMeta<typeof Icon>;
 
-export const RightChevron = () => (
-    <Icon
-        icon={IconEnum.RIGHT_CHEVRON}
-        size='24px'
-    />
+const Template = (args: IconProps): any => (
+    <Icon {...args}/>
 );
 
-export const Check = () => (
-    <Icon
-        icon={IconEnum.CHECK}
-        size='24px'
-    />
-);
+export const RightChevron: any = Template.bind ({});
+RightChevron.args = {
+    icon: IconEnum.RIGHT_CHEVRON,
+    size: '24px'
+}
+
+export const Check: any = Template.bind ({});
+Check.args = {
+    icon: IconEnum.CHECK,
+    size: '24px'
+}

@@ -4,8 +4,13 @@ import {StepsContainerHeader, StepsContainerHeaderProps} from "./header.componen
 export default {
     title: 'Shared/StepsContainer/Header',
     component: StepsContainerHeader,
-    backgrounds: {
-        default: 'dark',
+    parameters: {
+        backgrounds: {
+            default: 'dark',
+            values: [
+                { name: 'dark', value: '#333333' },
+            ],
+        },
     },
 } as ComponentMeta<typeof StepsContainerHeader>;
 
