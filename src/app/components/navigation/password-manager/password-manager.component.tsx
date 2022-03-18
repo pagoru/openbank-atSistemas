@@ -3,7 +3,6 @@ import {Container} from "../../shared/container/container.component";
 import styles from './password-manager.module.sass';
 import {StepsContainer} from "../../shared/steps-container/steps-container.component";
 import {PasswordManagerStepsContainerFooter} from "./steps-container/footer/footer.component";
-import {PasswordManagerStepsContainerHeader} from "./steps-container/header/header.component";
 
 export const PasswordManager: React.FunctionComponent = () => {
     
@@ -14,7 +13,6 @@ export const PasswordManager: React.FunctionComponent = () => {
             <div className={styles.backgroundHeader}/>
             <Container>
                 <StepsContainer
-                    header={<PasswordManagerStepsContainerHeader/>}
                     children={ch()}
                     footer={<PasswordManagerStepsContainerFooter/>}
                 />

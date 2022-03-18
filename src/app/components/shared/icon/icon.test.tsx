@@ -11,4 +11,11 @@ describe('Icon', () => {
 
         expect(button).toBeInTheDocument();
     });
+    
+    it('render check', () => {
+        render(<Icon icon={IconEnum.CHECK}/>);
+        const button = screen.getByTestId("icon-check");
+        
+        expect(button).toBeInTheDocument();
+    });
 })

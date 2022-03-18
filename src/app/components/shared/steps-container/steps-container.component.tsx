@@ -1,18 +1,19 @@
 import React, {ReactNode} from "react";
 import styles from './steps-container.module.sass';
+import {StepsContainerHeader} from "./header/header.component";
 
 type PasswordManagerContainerProps = {
-    header: ReactNode;
     footer: ReactNode;
-}
+};
 
 export const StepsContainer: React.FunctionComponent<PasswordManagerContainerProps> = (
     {
-        header,
         children,
         footer
     }
 ) => {
+    const length = 3;
+    const current = 1;
     return (
         <div
             data-testid='container'
@@ -22,9 +23,10 @@ export const StepsContainer: React.FunctionComponent<PasswordManagerContainerPro
                 data-testid='header'
                 className={styles.header}
             >
-                {
-                    header
-                }
+                <StepsContainerHeader
+                    length={length}
+                    current={current}
+                />
             </div>
             <div
                 data-testid='content'
