@@ -1,8 +1,8 @@
-import * as React from 'react';
-import i18n from "i18n-js";
-import {useState} from "react";
+import React, {useState} from "react";
+import i18n, {t} from "i18n-js";
+import {TranslationEnum} from "../enums/translation.enum";
 
-export const useTranslationHook = () => {
+export const useTranslation = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [lang, setLang] = useState('es');
     
@@ -20,5 +20,8 @@ export const useTranslationHook = () => {
         setIsLoaded(true);
     }, [lang]);
     
-    return { isLoaded, setLang };
+    const translation = (translation: TranslationEnum) =>
+        t(TranslationEnum[translation].toLowerCase())
+    
+    return { isLoaded, setLang, translation };
 }

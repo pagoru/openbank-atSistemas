@@ -1,7 +1,6 @@
 @import "../../../styles/styles.module"
 
 .container
-    margin-top: -3em
     background-color: getColor('white')
 
     .padding
@@ -23,3 +22,15 @@
             @extend .padding
             border-top: 2px solid getColor('mercury')
             background-color: getColor('white')
+            display: flex
+            justify-content: space-between
+
+            .nextButton
+                align-items: center
+                display: flex
+                gap: 0.5em
+                .icon
+                    width: 1.5em
+                    height: 1.5em
+                    path
+                        stroke: white !important

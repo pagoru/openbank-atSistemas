@@ -2,6 +2,7 @@ import React from "react";
 import styles from './button.module.sass';
 
 export type ButtonProps = {
+    className?: string;
     disabled?: boolean;
     secondary?: boolean;
     onClick?: () => any;
@@ -9,13 +10,15 @@ export type ButtonProps = {
 
 export const Button: React.FunctionComponent<ButtonProps> = (
     {
+        className,
         children,
         disabled = false,
         secondary = false,
         onClick = () => '',
     }
 ) => {
-    const className = [
+    const _className = [
+        className,
         styles.button,
         disabled ? styles.disabled : '',
         secondary ? styles.secondary : ''
@@ -26,7 +29,7 @@ export const Button: React.FunctionComponent<ButtonProps> = (
     return (
         <button
             data-testid='button'
-            className={className}
+            className={_className}
             onClick={_onClick}
         >
             {
