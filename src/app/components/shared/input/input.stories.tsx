@@ -13,6 +13,11 @@ const Template = (args: InputProps): any => (
 
 export const Primary: any = Template.bind ({});
 Primary.args = {
+    placeholder: 'Ejemplo de placeholder'
+}
+
+export const PrimaryIcon: any = Template.bind ({});
+PrimaryIcon.args = {
     placeholder: 'Repite tu contraseña',
     icon: IconEnum.EYE_SHOW
 }

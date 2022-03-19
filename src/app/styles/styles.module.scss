@@ -25,7 +25,9 @@ $colorMap: (
     'blue-whale': #002b45,
     'vampire-grey': #505050,
     'red-ribbon': #e8004c,
-    'dark-turquoise': #00c3dd
+    'dark-turquoise': #00c3dd,
+    'yellow-green': #3dce1a,
+    'faded-orange': #ff8a58
 );
 
 @function getColor($colorName) {
