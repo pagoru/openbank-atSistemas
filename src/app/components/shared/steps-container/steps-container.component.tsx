@@ -75,16 +75,20 @@ export const StepsContainer: React.FunctionComponent<PasswordManagerContainerPro
                     data-testid='steps-container-footer'
                     className={styles.footer}
                 >
-                    <Button
-                        secondary
-                        onClick={onClickCancel}
-                    >
-                        {
-                            isFirst
-                                ? translation(TranslationEnum.CANCEL)
-                                : translation(TranslationEnum.PREVIOUS)
-                        }
-                    </Button>
+                    {
+                        isFirst ? (
+                            <div/>
+                        ) : (
+                            <Button
+                                secondary
+                                onClick={onClickCancel}
+                            >
+                                {
+                                    translation(TranslationEnum.PREVIOUS)
+                                }
+                            </Button>
+                        )
+                    }
                     <Button
                         className={styles.nextButton}
                         disabled={!canContinue}
