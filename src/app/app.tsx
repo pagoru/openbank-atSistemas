@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import {useStore} from "./hooks/use-store.hook";
-import {useTranslation} from "./hooks/use.translation";
+import {useTranslation} from "./hooks/use-translation.hook";
 import {Header} from "./components/layout/header/header.component";
 import {Navigation} from "./components/navigation/navigation.component";
 import {Content} from "./components/layout/content/content.component";

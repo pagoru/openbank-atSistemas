@@ -2,7 +2,7 @@ import React from "react";
 import styles from './info.module.sass';
 import headImage from '../../../../assets/images/head.svg';
 import vaultImage from '../../../../assets/images/vault.svg';
-import {useTranslation} from "../../../../hooks/use.translation";
+import {useTranslation} from "../../../../hooks/use-translation.hook";
 import {TranslationEnum} from "../../../../enums/translation.enum";
 import {Subtitle} from "../../../shared/subtitle/subtitle.component";
 import {Title} from "../../../shared/title/title.component";

@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import styles from './footer.module.sass';
 import logoSantanderFooter from '../../../assets/images/logoSantanderFooter_0_es.svg';
 import logoAtSistemas from '../../../assets/images/logo_atSistemas.png';
-import {useTranslation} from "../../../hooks/use.translation";
+import {useTranslation} from "../../../hooks/use-translation.hook";
 import {TranslationEnum} from "../../../enums/translation.enum";
 
 export const Footer: React.FunctionComponent = () => {

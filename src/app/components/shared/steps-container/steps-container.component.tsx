@@ -4,7 +4,7 @@ import {StepsContainerHeader} from "./header/header.component";
 import {Button} from "../button/button.component";
 import {Icon} from "../icon/icon.component";
 import {IconEnum} from "../../../enums/icon.enum";
-import {useTranslation} from "../../../hooks/use.translation";
+import {useTranslation} from "../../../hooks/use-translation.hook";
 import {TranslationEnum} from "../../../enums/translation.enum";
 
 type PasswordManagerContainerProps = {
