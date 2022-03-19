@@ -1,11 +1,15 @@
 @import "../../../styles/styles.module"
 
 .header
+    display: flex
+    justify-content: space-between
+    align-items: center
     position: fixed
     top: 0
     width: 100%
     background-color: getColor('white')
     box-shadow: 0 0 2rem 0 rgb(0 0 0 / 8%)
+    z-index: 10
 
     .box
         padding: .4em 2em
@@ -14,4 +18,14 @@
         @extend .box
 
         .logo
-            width: 12em
+            width: 14em
+
+    .navigator
+        padding: .4em 2em
+
+        .item
+            text-decoration: none
+            cursor: pointer
+            font-size: 16px
+            font-weight: 500
+            color: getColor('vampire-grey')

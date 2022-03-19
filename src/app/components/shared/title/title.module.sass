@@ -1,0 +1,16 @@
+@import "../../../styles/styles.module"
+
+.title
+    position: relative
+    color: getColor('blue-whale')
+    font-weight: 800
+    margin: 1em 0 .6em 0
+    padding-bottom: .4em
+
+    &::before
+        content: ''
+        position: absolute
+        bottom: 0
+        background-color: getColor('dark-turquoise')
+        width: 1.5em
+        height: 3px

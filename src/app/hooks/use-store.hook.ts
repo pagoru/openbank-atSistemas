@@ -3,7 +3,7 @@ import { createStore, Store, applyMiddleware } from 'redux';
 import {DefaultState, rootReducer, rootSaga} from "../store/store";
 import createSagaMiddleware from 'redux-saga'
 
-export const useStoreHook = () => {
+export const useStore = () => {
     const [store, setStore] = React.useState<Store<DefaultState>>();
     
     React.useEffect(() => {

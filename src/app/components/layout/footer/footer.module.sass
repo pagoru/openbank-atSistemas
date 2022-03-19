@@ -2,25 +2,31 @@
 
 .footer
     width: 100%
+    background-color: getColor('white')
     
     .box
         padding: 1.5em 2em
 
     .santanderBox
         @extend .box
-        background-color: getColor('blue')
+        background-color: getColor('blue-whale')
         display: flex
         align-items: center
         justify-content: space-between
 
-        .santanderLogo
+        .logo
             display: block
-            height: 1rem
+            height: 1.5em
+
+        .atSistemasBox
+            display: flex
+            gap: 1em
+            align-items: baseline
 
         a
             text-decoration: none
             cursor: pointer
-            color: getColor('light-gray')
+            color: getColor('metallic-silver')
             font-weight: 600
 
             &:hover
@@ -28,4 +34,5 @@
 
     .copyrightBox
         @extend .box
-        color: getColor('gray')
+        color: getColor('cadet')
+        font-weight: 500
