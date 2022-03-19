@@ -3,9 +3,12 @@ import dayjs from "dayjs";
 import styles from './footer.module.sass';
 import logoSantanderFooter from '../../../assets/images/logoSantanderFooter_0_es.svg';
 import logoAtSistemas from '../../../assets/images/logo_atSistemas.png';
+import {useTranslation} from "../../../hooks/use.translation";
+import {TranslationEnum} from "../../../enums/translation.enum";
 
 export const Footer: React.FunctionComponent = () => {
-
+    const { translation } = useTranslation();
+    
     const year = dayjs(Date.now()).year();
 
     return (
@@ -35,7 +38,10 @@ export const Footer: React.FunctionComponent = () => {
             </div>
             <div className={styles.copyrightBox}>
                 <span>
-                    © {year} OPEN BANK S.A. Todos los derechos reservados. Openbank es una marca registrada.
+                    © {year} OPEN BANK S.A.
+                    {
+                        translation(TranslationEnum.COPYRIGHT)
+                    }
                 </span>
             </div>
         </div>

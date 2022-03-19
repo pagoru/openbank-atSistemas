@@ -1,12 +1,12 @@
 import {ComponentMeta} from '@storybook/react';
-import {Title, TitleProps} from "./title.component";
+import {Title} from "./title.component";
 
 export default {
     title: 'Shared/Title',
     component: Title,
 } as ComponentMeta<typeof Title>;
 
-const Template = (args: TitleProps): any => (
+const Template = (args: any): any => (
     <Title {...args}/>
 );
 

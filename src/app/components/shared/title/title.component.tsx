@@ -1,21 +1,17 @@
 import React from "react";
 import styles from './title.module.sass';
 
-export type TitleProps = {
-
-}
-
-export const Title: React.FunctionComponent<TitleProps> = (
+export const Title: React.FunctionComponent = (
     {
         children
     }
 ) => (
-    <h1
+    <h2
         data-testid='title'
         className={styles.title}
     >
         {
             children
         }
-    </h1>
+    </h2>
 )
