@@ -8,16 +8,16 @@ import {useTranslation} from "../../../hooks/use-translation.hook";
 import {TranslationEnum} from "../../../enums/translation.enum";
 
 type PasswordManagerContainerProps = {
-    onCancel?: () => any;
-    onFinish?: () => any;
+    onPrevious?: (isFirst: boolean) => any;
+    onNext?: (isLast: boolean) => any;
     canContinue?: boolean;
     className?: string;
 };
 
 export const StepsContainer: React.FunctionComponent<PasswordManagerContainerProps> = (
     {
-        onCancel = () => '',
-        onFinish = () => '',
+        onPrevious = () => '',
+        onNext = () => '',
         canContinue = true,
         className = '',
         children
@@ -39,15 +39,13 @@ export const StepsContainer: React.FunctionComponent<PasswordManagerContainerPro
     const isLast = currentChildIndex === childrenLength - 1;
     
     const onClickNext = () => {
-        isLast
-            ? onCancel()
-            : setCurrentChildIndex(currentChildIndex + 1);
+        onNext(isLast);
+        !isLast && setCurrentChildIndex(currentChildIndex + 1);
     }
     
     const onClickCancel = () => {
-        isFirst
-            ? onFinish()
-            : setCurrentChildIndex(currentChildIndex - 1);
+        onPrevious(isFirst);
+        !isFirst && setCurrentChildIndex(currentChildIndex - 1);
     }
     
     return (

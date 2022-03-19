@@ -1,14 +1,22 @@
 import React, {useState} from "react";
 import styles from './checkbox.module.sass'
 
-export const InputCheckbox: React.FunctionComponent = (
+export type InputCheckboxProps = {
+    onChange?: (isChecked: boolean) => any;
+}
+
+export const InputCheckbox: React.FunctionComponent<InputCheckboxProps> = (
     {
+        onChange,
         children
     }
 ) => {
     const [isChecked, setIsChecked] = useState<boolean>(false);
     
-    const _onClick = () => setIsChecked(!isChecked);
+    const _onClick = () => {
+        setIsChecked(!isChecked);
+        onChange && onChange(!isChecked);
+    }
     
     return (
         <div

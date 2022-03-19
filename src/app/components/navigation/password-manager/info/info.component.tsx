@@ -6,9 +6,20 @@ import {useTranslation} from "../../../../hooks/use-translation.hook";
 import {TranslationEnum} from "../../../../enums/translation.enum";
 import {Subtitle} from "../../../shared/subtitle/subtitle.component";
 import {Title} from "../../../shared/title/title.component";
+import {InputCheckbox} from "../../../shared/input/checkbox/checkbox.component";
 
-export const PasswordManagerInfo: React.FunctionComponent = () => {
+export type PasswordManagerInfoProps = {
+    onChange: (isValid: boolean) => any;
+}
+
+export const PasswordManagerInfo: React.FunctionComponent<PasswordManagerInfoProps> = (
+    {
+        onChange
+    }
+) => {
     const { translation } = useTranslation();
+    
+    const _onChangeInputCheckbox = (isValid: boolean) => onChange(isValid);
     
     return (
         <div className={styles.content}>
@@ -62,6 +73,15 @@ export const PasswordManagerInfo: React.FunctionComponent = () => {
                         translation(TranslationEnum.WHAT_COULD_BE_SAVED_DESCRIPTION)
                     }
                 </span>
+            </div>
+            <div className={styles.checkboxContainer}>
+                <InputCheckbox
+                    onChange={_onChangeInputCheckbox}
+                >
+                    {
+                        translation(TranslationEnum.ADULT_AND_TOS)
+                    }
+                </InputCheckbox>
             </div>
         </div>
     )

@@ -1,5 +1,6 @@
 
 export enum TranslationEnum {
+    ADULT_AND_TOS,
     BUILD_YOUR_PASSWORD_MANAGER,
     CANCEL,
     COPYRIGHT,
@@ -11,5 +12,5 @@ export enum TranslationEnum {
     PREVIOUS,
     SAVE_ALL_YOUR_PASSWORDS,
     WHAT_COULD_BE_SAVED,
-    WHAT_COULD_BE_SAVED_DESCRIPTION
+    WHAT_COULD_BE_SAVED_DESCRIPTION,
 }
