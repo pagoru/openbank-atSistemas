@@ -6,6 +6,7 @@ import {Title} from "../../../shared/title/title.component";
 import {InputPassword, PasswordStatus} from "../../../shared/input/password/password.component";
 import {InputCounter} from "../../../shared/input/counter/counter.component";
 import {PasswordManagerFormType} from "../../../../types/password-manager.types";
+import {isPasswordValid} from "../../../../utils/password.utils";
 
 export type PasswordManagerFormProps = {
     onChange: (isValid: boolean, passwordManagerFormType: PasswordManagerFormType) => any;
@@ -21,25 +22,25 @@ export const PasswordManagerForm: React.FunctionComponent<PasswordManagerFormPro
     const [password, setPassword] = useState<string>('');
     const [hint, setHint] = useState<string>('');
 
-    const [isPasswordValid, setIsPasswordValid] = useState<boolean>(false);
-    const [isRePasswordValid, setIsRePasswordValid] = useState<boolean>(false);
+    const [_isPasswordValid, _setIsPasswordValid] = useState<boolean>(false);
+    const [_isRePasswordValid, _setIsRePasswordValid] = useState<boolean>(false);
 
     useEffect(() => {
-        onChange(isPasswordValid && isRePasswordValid, { password, hint })
-    }, [isPasswordValid, isRePasswordValid]);
+        onChange(_isPasswordValid && _isRePasswordValid, { password, hint })
+    }, [_isPasswordValid, _isRePasswordValid]);
 
     const _onChangePasswordInput = (value: string, isValid: boolean) => {
         setPassword(value);
-        setIsPasswordValid(isValid);
+        _setIsPasswordValid(isValid);
     }
 
     const _onChangeRePasswordInput = (value: string, isValid: boolean) => {
-        setIsRePasswordValid(isValid);
+        _setIsRePasswordValid(isValid);
     }
 
     const _onCheckRePassword = (value: string): PasswordStatus => {
         if(value.length === 0) return 'none';
-        return password === value ? 'good' : 'error';
+        return password === value && isPasswordValid(value) ? 'good' : 'error';
     }
 
     const _onChangeHintInput = (value: string) => setHint(value);
