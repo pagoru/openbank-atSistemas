@@ -34,7 +34,7 @@ export const InputPassword: React.FunctionComponent<InputPasswordProps> = (
         
         if(value.length >= 4 && value.length < 8)
             return 'danger';
-        
+
         if(value.length >= 8)
             return isPasswordValid(value) ? 'good' : 'almost';
         

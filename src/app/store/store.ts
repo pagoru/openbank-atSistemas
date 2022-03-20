@@ -1,20 +1,20 @@
 import { combineReducers } from 'redux';
 import { all } from "@redux-saga/core/effects";
-import {exampleReducer, exampleSaga, ExampleState} from "./example";
+import {passwordManagerReducer, passwordManagerSaga, PasswordManagerState} from "./password-manager";
 
 /** Default State **/
 export interface DefaultState {
-    example: ExampleState;
+    passwordManager: PasswordManagerState;
 }
 
 /** root Reducers **/
 export const rootReducer = combineReducers<DefaultState>({
-    example: exampleReducer,
+    passwordManager: passwordManagerReducer,
 });
 
 /** root Sagas **/
 export function* rootSaga() {
     yield all([
-        exampleSaga(),
+        passwordManagerSaga(),
     ]);
 }
