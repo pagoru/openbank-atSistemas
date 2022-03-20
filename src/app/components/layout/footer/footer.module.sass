@@ -1,0 +1,38 @@
+@import "../../../styles/styles.module"
+
+.footer
+    width: 100%
+    background-color: getColor('white')
+    
+    .box
+        padding: 1.5em 2em
+
+    .santanderBox
+        @extend .box
+        background-color: getColor('blue-whale')
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+        .logo
+            display: block
+            height: 1.5em
+
+        .atSistemasBox
+            display: flex
+            gap: 1em
+            align-items: baseline
+
+        a
+            text-decoration: none
+            cursor: pointer
+            color: getColor('metallic-silver')
+            font-weight: 600
+
+            &:hover
+                opacity: .8
+
+    .copyrightBox
+        @extend .box
+        color: getColor('cadet')
+        font-weight: 500

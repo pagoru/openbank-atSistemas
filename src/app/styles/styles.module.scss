@@ -1,0 +1,36 @@
+@use "sass:map";
+
+$colorMap: (
+    'white': #fff,
+    'white-smoke': #f5f5f5,
+    'mercury': #e2e9e9,
+    'iron': #cbd5da,
+    'metallic-silver': #bac7cb,
+    'bluish-grey': #758f9b,
+    'cadet': #546a75,
+    'blue-whale': #002b45,
+    'vampire-grey': #505050,
+    'red-ribbon': #e8004c,
+    'dark-turquoise': #00c3dd,
+    'yellow-green': #3dce1a,
+    'faded-orange': #ff8a58
+);
+
+@function getColor($colorName) {
+    @return map.get($colorMap, $colorName)
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: getColor('white-smoke');
+    color: getColor('blue-whale');
+}
+
+* {
+    box-sizing: border-box;
+}

@@ -1,0 +1,77 @@
+@import "../../../../styles/styles.module"
+
+.header
+    .options
+        position: relative
+        justify-items: center
+        justify-content: center
+        display: flex
+        margin: auto
+
+        .line
+            height: 2em
+            width: 2em
+
+            &::before
+                position: absolute
+                content: ''
+                top: calc(50% - 1.5px)
+                height: 3px
+                width: 2em
+                background-color: getColor('bluish-grey')
+
+            &.done
+                &::before
+                    background-color: getColor('red-ribbon')
+
+        .option
+            position: relative
+            z-index: 1
+            text-align: center
+            line-height: 2em
+            width: 2em
+            height: 2em
+            color: getColor('white')
+
+            .checkIcon
+                margin: .4em
+
+            &::before
+                content: ''
+                position: absolute
+                left: 0
+                top: 0
+                z-index: -1
+                width: 2em
+                height: 2em
+                border-radius: 3em
+                background-color: getColor('bluish-grey')
+
+            &.selected
+                &::before
+                    left: -.25em
+                    top: -.25em
+                    width: 2.5em
+                    height: 2.5em
+                    background-color: getColor('blue-whale')
+                    box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 60%)
+
+            &.done
+                &::before
+                    background-color: getColor('red-ribbon')
+
+
+
+    .triangle
+        $size: 10px
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+
+        width: 0
+        height: 0
+        border-left: $size solid transparent
+        border-right: $size solid transparent
+
+        border-bottom: $size solid getColor('white')

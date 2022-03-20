@@ -1,0 +1,32 @@
+@import "../../../styles/styles.module"
+
+.container
+    position: relative
+    display: inline-flex
+
+    .input
+        min-width: 20em
+        letter-spacing: .05em
+        padding: 1em
+        margin: 0
+        border: 1px solid getColor('metallic-silver')
+        border-radius: 2px
+        font-family: 'Quicksand', sans-serif
+
+        &.inputIcon
+            padding: 1em 3.5em 1em 1em
+
+        &::placeholder
+            letter-spacing: .05em
+            font-family: 'Quicksand', sans-serif
+
+        &:focus
+            outline: none
+            border: 1px solid getColor('blue-whale')
+
+    .icon
+        position: absolute
+        right: 1em
+        top: .75em
+        width: 1.5em
+        height: 1.5em
