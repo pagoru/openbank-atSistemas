@@ -4,6 +4,7 @@ import {useTranslation} from "../../../../hooks/use-translation.hook";
 import {TranslationEnum} from "../../../../enums/translation.enum";
 import {Title} from "../../../shared/title/title.component";
 import {InputPassword} from "../../../shared/input/password/password.component";
+import {InputCounter} from "../../../shared/input/counter/counter.component";
 
 export type PasswordManagerFormProps = {
     onChange: (isValid: boolean) => any;
@@ -34,7 +35,7 @@ export const PasswordManagerForm: React.FunctionComponent<PasswordManagerFormPro
                         </label>
                         <InputPassword
                             placeHolder='asd'
-                            className={styles.passwordInput}
+                            maxLength={24}
                         />
                     </div>
                     <div className={styles.passwordInputItem}>
@@ -43,15 +44,23 @@ export const PasswordManagerForm: React.FunctionComponent<PasswordManagerFormPro
                         </label>
                         <InputPassword
                             placeHolder='asd'
-                            className={styles.passwordInput}
+                            maxLength={24}
                         />
                     </div>
                 </div>
-                <div>
+                <div className={styles.hintContainer}>
                     <span>
                         También puedes crear una pista
                     </span>
 
+                    <div className={styles.hintBox}>
+                        <label>
+                            Crea tu pista para recordar u contraseña (opcional)
+                        </label>
+                        <InputCounter
+                            maxLength={255}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

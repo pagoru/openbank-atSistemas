@@ -6,13 +6,15 @@ export type InputCounterProps = {
     value?: string;
     onChangeValue?: (value: string) => any;
     maxLength: number;
+    placeholder?: string;
 }
 
 export const InputCounter: React.FunctionComponent<InputCounterProps> = (
     {
         onChangeValue,
         value = '',
-        maxLength
+        maxLength,
+        placeholder
     }
 ) => {
 
@@ -35,6 +37,7 @@ export const InputCounter: React.FunctionComponent<InputCounterProps> = (
                 className={styles.input}
                 maxLength={maxLength}
                 value={_value}
+                placeholder={placeholder}
                 onChangeValue={_onChangeValue}
             />
             <span
