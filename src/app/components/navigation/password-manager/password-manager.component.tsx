@@ -3,6 +3,7 @@ import {Container} from "../../shared/container/container.component";
 import styles from './password-manager.module.sass';
 import {StepsContainer} from "../../shared/steps-container/steps-container.component";
 import {PasswordManagerInfo} from "./info/info.component";
+import {PasswordManagerForm} from "./form/form.component";
 
 export const PasswordManager: React.FunctionComponent = () => {
     
@@ -25,9 +26,9 @@ export const PasswordManager: React.FunctionComponent = () => {
                     <PasswordManagerInfo
                         onChange={_onChangePasswordManagerInfo}
                     />
-                    <div>
-                        Step 2
-                    </div>
+                    <PasswordManagerForm
+                        onChange={_onChangePasswordManagerInfo}
+                    />
                     <div>
                         Step 3
                     </div>

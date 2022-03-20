@@ -83,16 +83,18 @@ describe('StepsContainer', () => {
     it('can go next and previous', () => {
         render(stepsContainer);
         
-        const [buttonPrevious, buttonNext] = screen.queryAllByTestId('button');
+        const [_, buttonNext1] = screen.queryAllByTestId('button');
         
         let _stepsContainerStep = screen.getByText("Step 1");
         expect(_stepsContainerStep).toBeInTheDocument();
-    
-        buttonNext.click();
+
+        buttonNext1.click();
         _stepsContainerStep = screen.getByText("Step 2");
         expect(_stepsContainerStep).toBeInTheDocument();
-    
-        buttonPrevious.click();
+
+        const [buttonPrevious2] = screen.queryAllByTestId('button');
+
+        buttonPrevious2.click();
         _stepsContainerStep = screen.getByText("Step 1");
         expect(_stepsContainerStep).toBeInTheDocument();
         

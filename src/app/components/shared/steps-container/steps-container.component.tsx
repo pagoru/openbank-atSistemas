@@ -77,7 +77,9 @@ export const StepsContainer: React.FunctionComponent<PasswordManagerContainerPro
                 >
                     {
                         isFirst ? (
-                            <div/>
+                            <div
+                                data-testid='button'
+                            />
                         ) : (
                             <Button
                                 secondary
