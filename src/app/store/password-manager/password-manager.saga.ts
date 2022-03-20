@@ -23,12 +23,10 @@ export function* passwordManagerSaga() {
 }
 
 /** Saga functions **/
-//***************************************TESTED*****************************************
 function* savePassword(action: ISavePasswordAction) {
     yield put<IClearAction>(clearDispatchAction());
 
-    console.log('?', getRandomNumber(2000, 5000))
-    yield delay(getRandomNumber(2000, 5000));
+    yield delay(getRandomNumber(4000, 5000));
 
     const isValid = getRandomNumber(0, 1) === 0;
     const token = (Math.random() + 1).toString(36).substring(7) + action.password;

@@ -34,9 +34,9 @@ export const PasswordManager: React.FunctionComponent = () => {
     const _onNextStep = (isLast: boolean) => {
         if(!passwordManagerForm) return;
 
-        const targetStep = currentStep + 1;
+        const targetStep = isLast ? 0 : currentStep + 1;
 
-        setCanContinue(isLast);
+        setCanContinue(isLast && targetStep !== 0);
         setCurrentStep(targetStep);
 
         if(targetStep === PasswordManagerSteps.FORM)

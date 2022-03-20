@@ -53,42 +53,57 @@ export const PasswordManagerForm: React.FunctionComponent<PasswordManagerFormPro
             </Title>
             <div className={styles.form}>
                 <span>
-                    En primer lugar
+                    {
+                        translation(TranslationEnum.IN_FIRST_PLACE)
+                    }
                 </span>
                 <div className={styles.passwordInputItems}>
                     <div className={styles.passwordInputItem}>
                         <label>
-                            Crea tu Contraseña Maestra
+                            {
+                                translation(TranslationEnum.BUILD_YOUR_MASTER_PASSWORD)
+                            }
                         </label>
                         <InputPassword
-                            placeHolder='asd'
+                            placeHolder={translation(TranslationEnum.WRITE_YOUR_PASSWORD)}
                             maxLength={24}
                             onChange={_onChangePasswordInput}
                         />
                     </div>
                     <div className={styles.passwordInputItem}>
                         <label>
-                            Repite tu Contraseña Maestra
+                            {
+                                translation(TranslationEnum.REPEAT_MASTER_PASSWORD)
+                            }
                         </label>
                         <InputPassword
-                            placeHolder='asd'
+                            placeHolder={translation(TranslationEnum.REPEAT_PASSWORD)}
                             maxLength={24}
                             checkValue={_onCheckRePassword}
                             onChange={_onChangeRePasswordInput}
                         />
                     </div>
+                    <span>
+                        {
+                            translation(TranslationEnum.PASSWORD_INFO)
+                        }
+                    </span>
                 </div>
                 <div className={styles.hintContainer}>
                     <span>
-                        También puedes crear una pista
+                        {
+                            translation(TranslationEnum.HINT_INFO)
+                        }
                     </span>
-
                     <div className={styles.hintBox}>
                         <label>
-                            Crea tu pista para recordar u contraseña (opcional)
+                            {
+                                translation(TranslationEnum.BUILD_YOUR_HINT)
+                            }
                         </label>
                         <InputCounter
                             onChange={_onChangeHintInput}
+                            placeholder={translation(TranslationEnum.WRITE_YOUR_HINT)}
                             maxLength={255}
                         />
                     </div>
