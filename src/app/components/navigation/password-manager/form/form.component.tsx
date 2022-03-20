@@ -5,9 +5,10 @@ import {TranslationEnum} from "../../../../enums/translation.enum";
 import {Title} from "../../../shared/title/title.component";
 import {InputPassword, PasswordStatus} from "../../../shared/input/password/password.component";
 import {InputCounter} from "../../../shared/input/counter/counter.component";
+import {PasswordManagerFormType} from "../../../../types/password-manager.types";
 
 export type PasswordManagerFormProps = {
-    onChange: (isValid: boolean) => any;
+    onChange: (isValid: boolean, passwordManagerFormType: PasswordManagerFormType) => any;
 }
 
 export const PasswordManagerForm: React.FunctionComponent<PasswordManagerFormProps> = (
@@ -18,23 +19,21 @@ export const PasswordManagerForm: React.FunctionComponent<PasswordManagerFormPro
     const { translation } = useTranslation();
 
     const [password, setPassword] = useState<string>('');
+    const [hint, setHint] = useState<string>('');
 
     const [isPasswordValid, setIsPasswordValid] = useState<boolean>(false);
     const [isRePasswordValid, setIsRePasswordValid] = useState<boolean>(false);
 
     useEffect(() => {
-        console.log(isPasswordValid && isRePasswordValid)
-        onChange(isPasswordValid && isRePasswordValid);
+        onChange(isPasswordValid && isRePasswordValid, { password, hint })
     }, [isPasswordValid, isRePasswordValid]);
 
     const _onChangePasswordInput = (value: string, isValid: boolean) => {
-        console.log(value, isValid, '1');
         setPassword(value);
         setIsPasswordValid(isValid);
     }
 
     const _onChangeRePasswordInput = (value: string, isValid: boolean) => {
-        console.log(value, isValid, '2');
         setIsRePasswordValid(isValid);
     }
 
@@ -42,6 +41,8 @@ export const PasswordManagerForm: React.FunctionComponent<PasswordManagerFormPro
         if(value.length === 0) return 'none';
         return password === value ? 'good' : 'error';
     }
+
+    const _onChangeHintInput = (value: string) => setHint(value);
     
     return (
         <div className={styles.content}>
@@ -87,6 +88,7 @@ export const PasswordManagerForm: React.FunctionComponent<PasswordManagerFormPro
                             Crea tu pista para recordar u contraseña (opcional)
                         </label>
                         <InputCounter
+                            onChange={_onChangeHintInput}
                             maxLength={255}
                         />
                     </div>

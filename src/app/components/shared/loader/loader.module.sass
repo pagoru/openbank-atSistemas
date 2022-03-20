@@ -1,0 +1,23 @@
+@import "../../../styles/styles.module"
+
+.loader
+    display: inline-block
+    width: 2em
+    height: 2em
+
+    &::after
+        content: " "
+        display: block
+        width: calc(1.5em - 8px)
+        height: calc(1.5em - 8px)
+        margin: 4px
+        border-radius: 50%
+        border: 6px solid getColor('white')
+        border-color: getColor('blue-whale') transparent getColor('blue-whale') transparent
+        animation: loader 1.2s linear infinite
+
+@keyframes loader
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)

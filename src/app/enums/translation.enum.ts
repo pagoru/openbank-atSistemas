@@ -11,6 +11,7 @@ export enum TranslationEnum {
     NEXT,
     PREVIOUS,
     SAVE_ALL_YOUR_PASSWORDS,
+    START_AGAIN,
     WHAT_COULD_BE_SAVED,
     WHAT_COULD_BE_SAVED_DESCRIPTION,
 }

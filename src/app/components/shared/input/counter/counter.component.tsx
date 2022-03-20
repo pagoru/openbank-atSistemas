@@ -4,14 +4,14 @@ import styles from './counter.module.sass';
 
 export type InputCounterProps = {
     value?: string;
-    onChangeValue?: (value: string) => any;
+    onChange?: (value: string) => any;
     maxLength: number;
     placeholder?: string;
 }
 
 export const InputCounter: React.FunctionComponent<InputCounterProps> = (
     {
-        onChangeValue,
+        onChange,
         value = '',
         maxLength,
         placeholder
@@ -26,7 +26,7 @@ export const InputCounter: React.FunctionComponent<InputCounterProps> = (
 
     const _onChangeValue = (_value: string) => {
         _setValue(_value);
-        onChangeValue && onChangeValue(_value);
+        onChange && onChange(_value);
     }
 
     return (
