@@ -13,7 +13,7 @@ export const InputCheckbox: React.FunctionComponent<InputCheckboxProps> = (
 ) => {
     const [isChecked, setIsChecked] = useState<boolean>(false);
     
-    const _onClick = () => {
+    const _onChange = () => {
         setIsChecked(!isChecked);
         onChange && onChange(!isChecked);
     }
@@ -22,11 +22,12 @@ export const InputCheckbox: React.FunctionComponent<InputCheckboxProps> = (
         <div
             data-testid='input-checkbox'
             className={styles.checkbox}
-            onClick={_onClick}
+            onClick={_onChange}
         >
             <input
                 data-testid='input-checkbox-dom'
                 checked={isChecked}
+                onChange={_onChange}
                 type='checkbox'
             />
             <label

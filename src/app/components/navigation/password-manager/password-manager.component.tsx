@@ -10,6 +10,8 @@ export const PasswordManager: React.FunctionComponent = () => {
     const [canContinue, setCanContinue] = useState<boolean>(false);
     
     const _onChangePasswordManagerInfo = (isValid: boolean) => setCanContinue(isValid);
+    const _onChangePasswordManagerForm = (isValid: boolean) => setCanContinue(isValid);
+
     const _onNextStep = (isLast: boolean) => setCanContinue(isLast);
     const _onPreviousStep = () => setCanContinue(false);
     
@@ -27,7 +29,7 @@ export const PasswordManager: React.FunctionComponent = () => {
                         onChange={_onChangePasswordManagerInfo}
                     />
                     <PasswordManagerForm
-                        onChange={_onChangePasswordManagerInfo}
+                        onChange={_onChangePasswordManagerForm}
                     />
                     <div>
                         Step 3

@@ -11,6 +11,7 @@ export type InputPasswordProps = {
     onChange?: (value: string, isValid: boolean) => any;
     maxLength?: number;
     placeHolder?: string;
+    checkValue?: (value: string) => PasswordStatus;
 }
 
 export const InputPassword: React.FunctionComponent<InputPasswordProps> = (
@@ -18,13 +19,16 @@ export const InputPassword: React.FunctionComponent<InputPasswordProps> = (
         className,
         onChange,
         maxLength,
-        placeHolder
+        placeHolder,
+        checkValue
     }
 ) => {
     const [value, setValue] = useState<string>('');
     const [isVisible, setIsVisible] = useState<boolean>(false);
     
-    const _getPasswordStatus = (): PasswordStatus => {
+    const _getPasswordStatus = (value: string): PasswordStatus => {
+        if(checkValue) return checkValue(value);
+
         if(value.length > 0 && value.length < 4)
             return 'error';
         
@@ -43,13 +47,13 @@ export const InputPassword: React.FunctionComponent<InputPasswordProps> = (
     
     const _onChangeValue = (_value: string) => {
         setValue(_value);
-        onChange && onChange(_value, _getPasswordStatus() === 'good');
+        onChange && onChange(_value, _getPasswordStatus(_value) === 'good');
     }
     
     const _className = [
         className,
         styles.input,
-        styles[_getPasswordStatus()]
+        styles[_getPasswordStatus(value)]
     ].join(' ');
     
     return (
