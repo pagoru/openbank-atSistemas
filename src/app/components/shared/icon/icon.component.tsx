@@ -9,19 +9,22 @@ export type IconProps = {
     className?: string;
     icon?: IconEnum;
     size?: string;
+    onClick?: () => any;
 }
 
 export const Icon: React.FunctionComponent<IconProps> = (
     {
         className = '',
         icon = IconEnum.RIGHT_CHEVRON,
-        size = '48px'
+        size = '48px',
+        onClick
     }
 ) => {
     const props = {
         width: size,
         height: size,
-        className
+        className,
+        onClick
     }
     
     switch (icon) {

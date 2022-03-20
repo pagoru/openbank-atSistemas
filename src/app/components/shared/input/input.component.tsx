@@ -4,16 +4,26 @@ import {Icon} from "../icon/icon.component";
 import {IconEnum} from "../../../enums/icon.enum";
 
 export type InputProps = {
+    className?: string;
     placeholder?: string;
     value?: string;
+    onChangeValue?: (value: string) => any;
     icon?: IconEnum;
+    onClickIcon?: () => any;
+    type?: 'password' | 'number' | 'text';
+    maxLength?: number;
 }
 
 export const Input: React.FunctionComponent<InputProps> = (
     {
+        className = '',
         placeholder = '',
         value = '',
-        icon
+        onChangeValue,
+        icon,
+        onClickIcon,
+        type = 'text',
+        maxLength
     }
 ) => {
     const [_value, _setValue] = useState<string>('');
@@ -23,9 +33,16 @@ export const Input: React.FunctionComponent<InputProps> = (
     }, [value]);
 
     const _onChange = (event: any) => {
-        _setValue(event.target.value);
+        const value = event.target.value;
+        _setValue(value);
+        onChangeValue && onChangeValue(value)
     }
 
+    const containerClassName = [
+        className,
+        styles.container
+    ].join(' ');
+    
     const inputClassName = [
         styles.input,
         icon ? styles.inputIcon : ''
@@ -34,18 +51,22 @@ export const Input: React.FunctionComponent<InputProps> = (
     return (
         <div
             data-testid='input'
-            className={styles.container}
+            className={containerClassName}
         >
             <input
+                data-testid='input-dom'
                 className={inputClassName}
                 placeholder={placeholder}
                 value={_value}
                 onChange={_onChange}
+                type={type}
+                maxLength={maxLength}
             />
             {
                 icon && (
                     <Icon
                         className={styles.icon}
+                        onClick={onClickIcon}
                         icon={icon}
                     />
                 )
